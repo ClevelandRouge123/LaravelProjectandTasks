@@ -4,4 +4,8 @@ Personal Protfolio -
 My Life , My Blog and My Ideas. 
 Boxes for most recent project, blogs or notes
  
+useful commands:
 
+php artisan serve //begins server on port :8000
+
+composer update
