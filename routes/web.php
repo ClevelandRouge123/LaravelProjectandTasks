@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', 'PagesController@home');
+/*function () {
     $tasks = [ 
         'Go to the store',
         'Go to the market',
@@ -20,13 +21,11 @@ Route::get('/', function () {
     return view('welcome', [
 'tasks' => $tasks
     ]);
-});
+});*/
 
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact','PagesController@contact');
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about','PagesController@about');
+
+Route::get('/projects','ProjectsController@index');
