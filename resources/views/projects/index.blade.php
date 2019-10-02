@@ -1,21 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout')
+@section('content')
+<br>
+<h1 class="title">
+    Projects
+</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-
-<body>
-    <h1>
-        Projects
-    </h1>
+<form method="get" action="/projects/create">
+    <button type="submit" class="button">Create A Project</button>
+</form>
+<br>
+<ul>
     @foreach ($projects as $project)
-        <li>{{$project->title}}</li>
+    <div class="list is-hoverable">
+        <a class="list-item" href="/projects/{{$project->id}}">
+            <!--<li> <button type="submit" class="button">{{$project->title}}</button></li><br>-->
+            {{$project->title}}
+        </a>
+    </div>
     @endforeach
+</ul>
 
-</body>
-
-</html>
+@endsection

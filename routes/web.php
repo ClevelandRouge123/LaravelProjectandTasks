@@ -24,8 +24,19 @@ Route::get('/', 'PagesController@home');
 });*/
 
 
-Route::get('/contact','PagesController@contact');
+//Route::get('/contact','PagesController@contact');
 
-Route::get('/about','PagesController@about');
+//Route::get('/about','PagesController@about');
 
-Route::get('/projects','ProjectsController@index');
+//Route::get('/projects','ProjectsController@index');
+
+//Route::post('/projects','ProjectsController@store');
+
+//Route::get('/projects/create','ProjectsController@create');
+
+Route::resource('projects', 'ProjectsController');
+
+Route::patch('/tasks/{task}', 'ProjectsTasksController@update');
+
+Route::post('/projects/{project}/tasks', 'ProjectsTasksController@store');
+Route::delete('/tasks/{task}', 'ProjectsTasksController@destroy');
